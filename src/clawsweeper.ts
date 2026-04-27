@@ -372,7 +372,7 @@ const STATUS_START = "<!-- clawsweeper-status:start -->";
 const STATUS_END = "<!-- clawsweeper-status:end -->";
 const AUDIT_HEALTH_START = "<!-- clawsweeper-audit:start -->";
 const AUDIT_HEALTH_END = "<!-- clawsweeper-audit:end -->";
-const DEFAULT_CODEX_MODEL = "gpt-5.5";
+const DEFAULT_CODEX_MODEL = "gemini-2.5-pro";
 const DEFAULT_REASONING_EFFORT = "high";
 const DEFAULT_SERVICE_TIER = "fast";
 const REVIEW_POLICY_VERSION = "2026-04-27-policy-v8";
@@ -996,14 +996,31 @@ function closingPullRequestReferencesForIssue(number: number): number[] {
 }
 
 function closingPullRequestsForIssue(number: number): unknown[] {
-  return closingPullRequestReferencesForIssue(number).map((pullNumber) =>
-    ghJson<unknown>([
-      "api",
-      `repos/${TARGET_REPO}/pulls/${pullNumber}`,
-      "--jq",
-      "{number,title,state,html_url,body,user:{login:.user.login},merged:.merged,merged_at:.merged_at,head:{ref:.head.ref,sha:.head.sha},base:{ref:.base.ref,sha:.base.sha}}",
-    ]),
-  );
+  return closingPullRequestReferencesForIssue(number)
+    .map((pullNumber): unknown => {
+      try {
+        return ghJson<unknown>([
+          "api",
+          `repos/${TARGET_REPO}/pulls/${pullNumber}`,
+          "--jq",
+          "{number,title,state,html_url,body,user:{login:.user.login},merged:.merged,merged_at:.merged_at,head:{ref:.head.ref,sha:.head.sha},base:{ref:.base.ref,sha:.base.sha}}",
+        ]);
+      } catch (error) {
+        // GitHub's closedByPullRequestsReferences sometimes returns numbers
+        // for cross-repo or otherwise non-resolvable PRs (e.g. issue #52875
+        // → phantom #1273). The local fetch 404s; without this guard the
+        // whole review run dies before apply-artifacts/dashboard.
+        const message = error instanceof Error ? error.message : String(error);
+        if (/HTTP 404|Not Found/i.test(message)) {
+          console.warn(
+            `[closingPullRequestsForIssue] dropping unresolvable PR reference #${pullNumber} for issue #${number}`,
+          );
+          return null;
+        }
+        throw error;
+      }
+    })
+    .filter((pull): pull is unknown => pull !== null);
 }
 
 export function openClosingPullRequestApplyReason(pullRequests: readonly unknown[]): string | null {
