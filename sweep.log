@@ -1,0 +1,36 @@
+
+> @openclaw/clawsweeper@0.1.0 review
+> node dist/clawsweeper.js review --openclaw-dir ../openclaw --batch-size 10 --max-pages 50 --artifact-dir artifacts/reviews
+
+[review] 2026-04-27T05:00:36.543Z shard=0/1 selected=10 scanned_pages=50
+[review] 2026-04-27T05:00:36.546Z shard=0/1 start #75 (1/10)
+Transient GitHub API failure; retrying gh api repos/openclaw/openclaw/issues/75/timeline in 2s
+[review] 2026-04-27T05:01:59.873Z shard=0/1 done #75 (1/10) decision=keep_open confidence=low action=kept_open
+[review] 2026-04-27T05:01:59.873Z shard=0/1 start #147 (2/10)
+[review] 2026-04-27T05:03:00.087Z shard=0/1 done #147 (2/10) decision=keep_open confidence=low action=kept_open
+[review] 2026-04-27T05:03:00.087Z shard=0/1 start #1210 (3/10)
+[review] 2026-04-27T05:03:36.189Z shard=0/1 done #1210 (3/10) decision=keep_open confidence=low action=kept_open
+[review] 2026-04-27T05:03:36.189Z shard=0/1 start #40321 (4/10)
+[review] 2026-04-27T05:03:55.443Z shard=0/1 done #40321 (4/10) decision=keep_open confidence=low action=kept_open
+[review] 2026-04-27T05:03:55.444Z shard=0/1 start #40318 (5/10)
+[review] 2026-04-27T05:04:17.022Z shard=0/1 done #40318 (5/10) decision=keep_open confidence=low action=kept_open
+[review] 2026-04-27T05:04:17.022Z shard=0/1 start #55589 (6/10)
+[review] 2026-04-27T05:04:36.358Z shard=0/1 done #55589 (6/10) decision=keep_open confidence=low action=kept_open
+[review] 2026-04-27T05:04:36.358Z shard=0/1 start #62160 (7/10)
+[review] 2026-04-27T05:05:05.892Z shard=0/1 done #62160 (7/10) decision=keep_open confidence=low action=kept_open
+[review] 2026-04-27T05:05:05.892Z shard=0/1 start #55757 (8/10)
+[review] 2026-04-27T05:05:27.427Z shard=0/1 done #55757 (8/10) decision=keep_open confidence=low action=kept_open
+[review] 2026-04-27T05:05:27.427Z shard=0/1 start #50506 (9/10)
+[review] 2026-04-27T05:05:46.933Z shard=0/1 done #50506 (9/10) decision=keep_open confidence=low action=kept_open
+[review] 2026-04-27T05:05:46.933Z shard=0/1 start #47814 (10/10)
+[review] 2026-04-27T05:06:08.490Z shard=0/1 done #47814 (10/10) decision=keep_open confidence=low action=kept_open
+[review] 2026-04-27T05:06:08.490Z shard=0/1 complete reviewed=10
+
+> @openclaw/clawsweeper@0.1.0 apply-artifacts
+> node dist/clawsweeper.js apply-artifacts --artifact-dir artifacts/reviews
+
+[apply-artifacts] applied=10 skipped_closed=0
+
+> @openclaw/clawsweeper@0.1.0 dashboard
+> node dist/clawsweeper.js dashboard
+
