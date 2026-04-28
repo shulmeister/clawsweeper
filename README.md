@@ -27,7 +27,7 @@ item is already resolved or a maintainer explicitly asks to close one side.
 
 ## Dashboard
 
-Last dashboard update: Apr 28, 2026, 14:58 UTC
+Last dashboard update: Apr 28, 2026, 15:09 UTC
 
 ### Current Run
 
@@ -45,11 +45,11 @@ Workflow is running.
 
 | Metric | Count |
 | --- | ---: |
-| Open issues in [openclaw/openclaw](https://github.com/openclaw/openclaw) | 3551 |
-| Open PRs in [openclaw/openclaw](https://github.com/openclaw/openclaw) | 3411 |
-| Open items total | 6962 |
+| Open issues in [openclaw/openclaw](https://github.com/openclaw/openclaw) | 3553 |
+| Open PRs in [openclaw/openclaw](https://github.com/openclaw/openclaw) | 3413 |
+| Open items total | 6966 |
 | Reviewed files | 6351 |
-| Unreviewed open items | 611 |
+| Unreviewed open items | 615 |
 | Archived closed files | 13430 |
 
 ### Review Outcomes
@@ -58,12 +58,12 @@ Workflow is running.
 | --- | ---: |
 | Fresh reviewed issues in the last 7 days | 3064 |
 | Proposed issue closes | 0 (0% of reviewed issues) |
-| Fresh reviewed PRs in the last 7 days | 2820 |
+| Fresh reviewed PRs in the last 7 days | 2815 |
 | Proposed PR closes | 0 (0% of reviewed PRs) |
-| Fresh verified reviews in the last 7 days | 5884 |
+| Fresh verified reviews in the last 7 days | 5879 |
 | Proposed closes awaiting apply | 0 (0% of fresh reviews) |
 | Closed by Codex apply | 10102 |
-| Failed or stale reviews | 467 |
+| Failed or stale reviews | 472 |
 
 ### Cadence
 
@@ -71,11 +71,11 @@ Workflow is running.
 | --- | ---: |
 | Hourly cadence coverage | 0/523 current (523 due, 0%) |
 | Hourly hot item cadence (<7d) | 0/523 current (523 due, 0%) |
-| Daily cadence coverage | 0/3994 current (3994 due, 0%) |
+| Daily cadence coverage | 0/3993 current (3993 due, 0%) |
 | Daily PR cadence | 0/2762 current (2762 due, 0%) |
-| Daily new issue cadence (<30d) | 0/1232 current (1232 due, 0%) |
-| Weekly older issue cadence | 1816/1834 current (18 due, 99%) |
-| Due now by cadence | 5146 |
+| Daily new issue cadence (<30d) | 0/1231 current (1231 due, 0%) |
+| Weekly older issue cadence | 1817/1835 current (18 due, 99%) |
+| Due now by cadence | 5149 |
 
 ### Audit Health
 
@@ -107,13 +107,13 @@ Status: **Action needed**
 
 ### Latest Run Activity
 
-Latest review: Apr 28, 2026, 14:56 UTC. Latest close: Apr 27, 2026, 03:50 UTC. Latest comment sync: Apr 27, 2026, 04:25 UTC.
+Latest review: Apr 28, 2026, 15:06 UTC. Latest close: Apr 27, 2026, 03:50 UTC. Latest comment sync: Apr 27, 2026, 04:25 UTC.
 
 | Window | Reviews | Close decisions | Keep-open decisions | Failed/stale reviews | Closed | Comments synced | Apply skips |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Last 15 minutes | 9 | 0 | 9 | 9 | 0 | 0 | 0 |
+| Last 15 minutes | 10 | 0 | 10 | 10 | 0 | 0 | 0 |
 | Last hour | 23 | 0 | 23 | 23 | 0 | 0 | 0 |
-| Last 24 hours | 428 | 0 | 428 | 428 | 0 | 0 | 0 |
+| Last 24 hours | 433 | 0 | 433 | 433 | 0 | 0 | 0 |
 
 ### Recently Closed
 
@@ -137,16 +137,16 @@ Latest review: Apr 28, 2026, 14:56 UTC. Latest close: Apr 27, 2026, 03:50 UTC. L
 
 | Item | Title | Outcome | Status | Reviewed |
 | --- | --- | --- | --- | --- |
+| [#41048](https://github.com/openclaw/openclaw/pull/41048) | fix(telegram): surface error when getFile() fails instead of misleading placeholder | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/41048.md) | failed | Apr 28, 2026, 15:06 UTC |
+| [#41255](https://github.com/openclaw/openclaw/pull/41255) | fix: prefer sessionKey over label in sessions_send instead of rejecting both | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/41255.md) | failed | Apr 28, 2026, 15:06 UTC |
+| [#41296](https://github.com/openclaw/openclaw/pull/41296) | fix(gateway): improve shutdown error visibility and add close timeout | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/41296.md) | failed | Apr 28, 2026, 15:05 UTC |
+| [#41009](https://github.com/openclaw/openclaw/pull/41009) | fix(config): migrate tailscale serve binds to loopback | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/41009.md) | failed | Apr 28, 2026, 15:05 UTC |
+| [#40950](https://github.com/openclaw/openclaw/pull/40950) | media: make MEDIA_MAX_BYTES configurable via media.maxBytes | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/40950.md) | failed | Apr 28, 2026, 15:05 UTC |
 | [#40953](https://github.com/openclaw/openclaw/pull/40953) | fix(CLI): validate gateway-facing timeout input | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/40953.md) | failed | Apr 28, 2026, 14:56 UTC |
 | [#40970](https://github.com/openclaw/openclaw/pull/40970) | logging.file configuration supports wildcard characters YYYY-MM-DD | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/40970.md) | failed | Apr 28, 2026, 14:55 UTC |
 | [#41621](https://github.com/openclaw/openclaw/pull/41621) | fix: separate filter state for Agents Skills panel and Skills tab | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/41621.md) | failed | Apr 28, 2026, 14:55 UTC |
 | [#67805](https://github.com/openclaw/openclaw/pull/67805) | fix(memory-core): fall back when mcporter query returns no results | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/67805.md) | failed | Apr 28, 2026, 14:55 UTC |
 | [#55940](https://github.com/openclaw/openclaw/pull/55940) | fix: skip Homebrew dependency for skill install on Linux (#14593) | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/55940.md) | failed | Apr 28, 2026, 14:54 UTC |
-| [#41268](https://github.com/openclaw/openclaw/pull/41268) | fix(cli): warn about agent-level model overrides on config set | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/41268.md) | failed | Apr 28, 2026, 14:45 UTC |
-| [#41351](https://github.com/openclaw/openclaw/pull/41351) | fix(skills): restore executable bit on bundled whisper script + release-time check | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/41351.md) | failed | Apr 28, 2026, 14:45 UTC |
-| [#41022](https://github.com/openclaw/openclaw/pull/41022) | feat: raise CLI watchdog no-output timeout caps (3 min → 30 min) | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/41022.md) | failed | Apr 28, 2026, 14:45 UTC |
-| [#48883](https://github.com/openclaw/openclaw/pull/48883) | Cron: constrain main-session system events | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/48883.md) | failed | Apr 28, 2026, 14:44 UTC |
-| [#41259](https://github.com/openclaw/openclaw/pull/41259) | fix: stop swallowing mkdir errors in memory ensureDir | [keep_open / kept_open](https://github.com/openclaw/clawsweeper/blob/main/items/41259.md) | failed | Apr 28, 2026, 14:35 UTC |
 
 </details>
 
