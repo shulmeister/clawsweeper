@@ -2225,20 +2225,31 @@ function runCodex(options: {
       `OpenClaw checkout is dirty before reviewing #${options.item.number}:\n${dirtyBefore}`,
     );
   }
+  // forced_login_method="api" was removed deliberately (2026-09-19). Against a
+  // ChatGPT-authenticated codex CLI it does not fall back -- it LOGS THE USER
+  // OUT, deleting ~/.codex/auth.json, then fails anyway because no API key is
+  // left to use. Every run was destructive to the operator's own session.
+  //
+  // CLAWSWEEPER_MODEL_PROVIDER selects a provider from ~/.codex/config.toml
+  // (whose env_key supplies the credential), so this can run on a model the
+  // operator already pays for instead of OpenAI. service_tier is an OpenAI-only
+  // knob that other providers reject, so it is sent only on the default path.
+  const modelProvider = (process.env.CLAWSWEEPER_MODEL_PROVIDER ?? "").trim();
+  const configFlags: string[] = [
+    "-c",
+    `model_reasoning_effort="${options.reasoningEffort}"`,
+  ];
+  if (modelProvider) configFlags.push("-c", `model_provider="${modelProvider}"`);
+  else configFlags.push("-c", `service_tier="${options.serviceTier}"`);
+  configFlags.push("-c", 'approval_policy="never"');
+
   const result = spawnSync(
     "codex",
     [
       "exec",
       "-m",
       options.model,
-      "-c",
-      `model_reasoning_effort="${options.reasoningEffort}"`,
-      "-c",
-      `service_tier="${options.serviceTier}"`,
-      "-c",
-      'forced_login_method="api"',
-      "-c",
-      'approval_policy="never"',
+      ...configFlags,
       "-C",
       options.openclawDir,
       "--output-schema",
